@@ -3,8 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525">
+        Title="{Binding Title}" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="直近値"
+                        Width="100"
+                        Command="{Binding WeatherLatestButton}"/>
+            </StackPanel>
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        </StackPanel>
+        <StatusBar VerticalAlignment="Bottom">
+            <ProgressBar Height="20"
+                         Width="150"
+                         Value="{Binding ProgressBarValue}"/>
+            <Label Content="{Binding ProgressBarText}"/>
+            <Separator/>
+            <Label Content="{Binding StatusLabel}"/>
+        </StatusBar>
     </Grid>
 </Window>
