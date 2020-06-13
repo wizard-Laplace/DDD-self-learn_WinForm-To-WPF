@@ -20,14 +20,25 @@ namespace DDD.WPF.ViewModels
             _regionManager = regionManager;
             WeatherLatestButton = new DelegateCommand(
                 WeatherLatestButtonExecute);
+
+            WeatherListButton = new DelegateCommand(
+                WeatherListButtonExecute);
         }
 
         public DelegateCommand WeatherLatestButton { get; }
+        public DelegateCommand WeatherListButton { get; }
 
         private void WeatherLatestButtonExecute()
         {
             _regionManager.RequestNavigate
                 ("ContentRegion", nameof(WeatherLatestView));
+        }
+
+        private void WeatherListButtonExecute()
+        {
+            _regionManager.RequestNavigate
+                ("ContentRegion", nameof(WeatherListView));
+
         }
     }
 }

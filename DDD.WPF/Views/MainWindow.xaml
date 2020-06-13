@@ -11,6 +11,9 @@
                 <Button Content="直近値"
                         Width="100"
                         Command="{Binding WeatherLatestButton}"/>
+                <Button Content="List"
+                        Width="100"
+                        Command="{Binding WeatherListButton}"/>
             </StackPanel>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" />
         </StackPanel>
