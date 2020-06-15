@@ -25,18 +25,44 @@ namespace DDD.WPF.ViewModels
             {
                 Weathers.Add(new WeatherListViewModelWeather(entity));
             }
+
+            UpdateButton = new DelegateCommand(UpdateButtonExecute);
+
+            DatagridSelectionChanged = new DelegateCommand(DatagridSelectionChangedExecute);
         }
 
         private ObservableCollection<WeatherListViewModelWeather> _weathers
             = new ObservableCollection<WeatherListViewModelWeather>();
 
         public ObservableCollection<WeatherListViewModelWeather> Weathers
-    {
+        {
             get { return _weathers; }
             set
             {
                 SetProperty(ref _weathers, value);
             }
+        }
+
+        //SelectedWeater
+        private WeatherListViewModelWeather _selectedWeater;
+        public WeatherListViewModelWeather SelectedWeater
+        {
+            get { return _selectedWeater; }
+            set { SetProperty(ref _selectedWeater, value); }
+        }
+
+        public DelegateCommand UpdateButton { get; }
+
+        public DelegateCommand DatagridSelectionChanged { get; }
+
+        private void UpdateButtonExecute()
+        {
+
+        }
+
+        private void DatagridSelectionChangedExecute()
+        {
+
         }
     }
 }

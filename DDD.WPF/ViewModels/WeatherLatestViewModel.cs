@@ -36,6 +36,17 @@ namespace DDD.WPF.ViewModels
             LatestButton = new DelegateCommand(LatestButtonExecute);
         }
 
+        private ObservableCollection<AreaEntity> _areas
+            = new ObservableCollection<AreaEntity>();
+        public ObservableCollection<AreaEntity> Areas
+        {
+            get { return _areas; }
+            set
+            {
+                SetProperty(ref _areas, value);
+            }
+        }
+
         private AreaEntity _selectedArea;
         public AreaEntity SelectedArea
         {
@@ -75,17 +86,6 @@ namespace DDD.WPF.ViewModels
             {
                 SetProperty(ref _temperatureText, value);
 
-            }
-        }
-
-        private ObservableCollection<AreaEntity> _areas
-            = new ObservableCollection<AreaEntity>();
-        public ObservableCollection<AreaEntity> Areas
-        {
-            get { return _areas; }
-            set
-            {
-                SetProperty(ref _areas, value);
             }
         }
 
