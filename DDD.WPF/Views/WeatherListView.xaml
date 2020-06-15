@@ -4,6 +4,81 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <Label Content="List"/>
+        <DataGrid ItemsSource="{Binding Weathers}"
+                  AutoGenerateColumns="False"
+                  RowHeight="30"
+                  FontSize="16"
+                  IsReadOnly="True">
+
+            <DataGrid.Columns>
+                
+                <!--エリアID-->
+                <DataGridTextColumn Header="エリアID"
+                                    Binding="{Binding AreaId}"
+                                    Width="100">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+
+                <!--エリア名称-->
+                <DataGridTextColumn Header="エリア名称"
+                                    Binding="{Binding AreaName}"
+                                    Width="180">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+
+                <!--計測日時-->
+                <DataGridTextColumn Header="計測日時"
+                                    Binding="{Binding DataDate}"
+                                    Width="180">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+
+                <!--状態-->
+                <DataGridTextColumn Header="状態"
+                                    Binding="{Binding Condition}"
+                                    Width="100">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+
+                <!--温度-->
+                <DataGridTextColumn Header="温度"
+                                    Binding="{Binding Temperature}"
+                                    Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+
+                    <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextAlignment"
+                                        Value="Right"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

@@ -78,7 +78,8 @@ namespace DDD.WPF.ViewModels
             }
         }
 
-        private ObservableCollection<AreaEntity> _areas = new ObservableCollection<AreaEntity>();
+        private ObservableCollection<AreaEntity> _areas
+            = new ObservableCollection<AreaEntity>();
         public ObservableCollection<AreaEntity> Areas
         {
             get { return _areas; }
