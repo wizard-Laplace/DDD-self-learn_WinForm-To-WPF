@@ -22,7 +22,13 @@
                         Command="{Binding DatagridSelectionChanged}"
                         />
                 </i:EventTrigger>
-            </i:Interaction.Triggers>
+
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <prism:InvokeCommandAction
+                    Command="{Binding DatagridMouseDoubleClick}"
+                    />
+                </i:EventTrigger>
+                </i:Interaction.Triggers>
 
                 <DataGrid.Columns>
                     

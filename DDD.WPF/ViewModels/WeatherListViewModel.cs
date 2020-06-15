@@ -29,6 +29,8 @@ namespace DDD.WPF.ViewModels
             UpdateButton = new DelegateCommand(UpdateButtonExecute);
 
             DatagridSelectionChanged = new DelegateCommand(DatagridSelectionChangedExecute);
+
+            DatagridMouseDoubleClick = new DelegateCommand(DatagridMouseDoubleClickExecute);
         }
 
         private ObservableCollection<WeatherListViewModelWeather> _weathers
@@ -55,12 +57,19 @@ namespace DDD.WPF.ViewModels
 
         public DelegateCommand DatagridSelectionChanged { get; }
 
+        public DelegateCommand DatagridMouseDoubleClick { get; }
+
         private void UpdateButtonExecute()
         {
 
         }
 
         private void DatagridSelectionChangedExecute()
+        {
+
+        }
+
+        private void DatagridMouseDoubleClickExecute()
         {
 
         }
