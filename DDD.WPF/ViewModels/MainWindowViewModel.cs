@@ -1,4 +1,5 @@
-﻿using DDD.WPF.Views;
+﻿using DDD.Domain;
+using DDD.WPF.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -40,6 +41,8 @@ namespace DDD.WPF.ViewModels
 
             WeatherSaveButton = new DelegateCommand(
                 WeatherSaveButtonExecute);
+
+            this.Title = Shared.FakePath;
         }
 
         public DelegateCommand WeatherLatestButton { get; }
