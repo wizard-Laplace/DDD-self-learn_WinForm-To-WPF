@@ -10,7 +10,7 @@
                     Width="100"
                     Command="{Binding UpdateButton}"/>
             <DataGrid ItemsSource="{Binding Weathers}"
-                      SelectedItem="{Binding SelectedWeater}"
+                      SelectedItem="{Binding SelectedWeather}"
                       AutoGenerateColumns="False"
                       RowHeight="30"
                       FontSize="16"

@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace DDD.WPF.ViewModels
 {
-    public class WeatherLatestViewModel : BindableBase
+    public class WeatherLatestViewModel : ViewModelBase
     {
         private IWeatherRepository _weather;
         private IAreasRepositoy _areasRepositoy;

@@ -9,17 +9,22 @@ using System.Linq;
 
 namespace DDD.WPF.ViewModels
 {
-    public class WeatherListViewModel : BindableBase
+    public class WeatherListViewModel : ViewModelBase
     {
         private IWeatherRepository _weather;
+        private MainWindowViewModel _mainWindowViewModel;
 
-        public WeatherListViewModel()
-            : this(new WeatherSQLite())
+        public WeatherListViewModel(
+            MainWindowViewModel mainWindowViewModel)
+            : this(new WeatherSQLite(), mainWindowViewModel)
         {
         }
-        public WeatherListViewModel(IWeatherRepository weather)
+        public WeatherListViewModel(
+            IWeatherRepository weather,
+            MainWindowViewModel mainWindowViewModel)
         {
             _weather = weather;
+            _mainWindowViewModel = mainWindowViewModel;
 
             foreach (var entity in _weather.GetData())
             {
@@ -45,12 +50,12 @@ namespace DDD.WPF.ViewModels
             }
         }
 
-        //SelectedWeater
-        private WeatherListViewModelWeather _selectedWeater;
-        public WeatherListViewModelWeather SelectedWeater
+        //SelectedWeather
+        private WeatherListViewModelWeather _selectedWeather;
+        public WeatherListViewModelWeather SelectedWeather
         {
-            get { return _selectedWeater; }
-            set { SetProperty(ref _selectedWeater, value); }
+            get { return _selectedWeather; }
+            set { SetProperty(ref _selectedWeather, value); }
         }
 
         public DelegateCommand UpdateButton { get; }
@@ -61,7 +66,7 @@ namespace DDD.WPF.ViewModels
 
         private void UpdateButtonExecute()
         {
-
+            _mainWindowViewModel.StatusLabel = "検索しました";
         }
 
         private void DatagridSelectionChangedExecute()

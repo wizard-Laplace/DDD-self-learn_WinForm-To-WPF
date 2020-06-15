@@ -14,6 +14,9 @@
                 <Button Content="List"
                         Width="100"
                         Command="{Binding WeatherListButton}"/>
+                <Button Content="Save"
+                        Width="100"
+                        Command="{Binding WeatherSaveButton}"/>
             </StackPanel>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" />
         </StackPanel>
